@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.WriteActivity">
+
+    <TextView
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        android:layout_marginBottom="10dp"
+        android:text="그들을 무엇을 미묘한 이상 청춘 것이다."
+        android:layout_alignParentTop="true"
+        android:id="@+id/write_edit_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textSize="20sp"
+        android:gravity="start"
+        android:text="얼마나 몸이 구할 새 예수는 것이다. 피가 앞이 황금시대의 것이다. 싶이 크고 발휘하기 불러 충분히 이상을 우리 생생하며, 사막이다. 그들은 소금이라 얼마나 보라. 거친 이상의 관현악이며, 청춘은 눈에 같이, 광야에서 바이며, 바로 것이다. 보는 작고 사라지지 가치를 아니한 우리 주며, 보이는 동산에는 뿐이다. 생명을 인간의 인생을 봄바람이다. 못할 설산에서 수 있을 않는 발휘하기 피어나는 관현악이며, 보라. 가는 동력은 얼마나 예수는 품었기 가슴에 끓는다. 별과 인간이 같이 꽃이 인생을 무엇을 같은 황금시대다.
+
+커다란 트고, 아니한 소리다.이것은 구하지 있는 주며, 있을 것이다. 가진 품에 만천하의 가치를 가는 있는 이 장식하는 것이다. 광야에서 현저하게 스며들어 청춘에서만 보이는 위하여, 살 우리는 원대하고, 쓸쓸하랴? 행복스럽고 그림자는 이는 그러므로 봄바람이다. 못할 사랑의 같은 뜨거운지라, 청춘 속에서 피는 웅대한 이 듣는다. 구하기 피에 할지라도 약동하다. 그것은 천고에 무엇이 수 자신과 피고 기관과 눈이 이상은 힘있다. 곧 생명을 무엇을 노년에게서 인생에 같이, 스며들어 크고 속잎나고, 있는가? 것이 곳이 위하여 인생을 칼이다. 청춘의 타오르고 불어 속에 청춘을 시들어 이것이다.
+"
+        android:layout_below="@id/write_edit_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        android:text="Back"
+        android:id="@+id/write_button_send"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
