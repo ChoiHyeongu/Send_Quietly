@@ -2,47 +2,71 @@ package com.motivation.sendquiet.model;
 
 public class User {
 
-    String groupName;
-    String usrename;
-    int age;
-    int gender;
+    String id;
+    String name;
+    int send;
+    int to;
+    String group;
+    boolean isTeacher = false;
 
-    public User(String groupName, String usrename, int age, int gender) {
-        this.groupName = groupName;
-        this.usrename = usrename;
-        this.age = age;
-        this.gender = gender;
+    public User() {
+        // default constructor
     }
 
-    public String getGroupName() {
-        return groupName;
+    public User(String id, String name, int send, int to, String group, boolean isTeacher) {
+        this.id = id;
+        this.name = name;
+        this.send = send;
+        this.to = to;
+        this.group = group;
+        this.isTeacher = isTeacher;
     }
 
-    public void setGroupName(String groupName) {
-        this.groupName = groupName;
+    public String getId() {
+        return id;
     }
 
-    public String getUsrename() {
-        return usrename;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setUsrename(String usrename) {
-        this.usrename = usrename;
+    public String getName() {
+        return name;
     }
 
-    public int getAge() {
-        return age;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public int getSend() {
+        return send;
     }
 
-    public int getGender() {
-        return gender;
+    public void setSend(int send) {
+        this.send = send;
     }
 
-    public void setGender(int gender) {
-        this.gender = gender;
+    public int getTo() {
+        return to;
+    }
+
+    public void setTo(int to) {
+        this.to = to;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    public boolean isTeacher() {
+        return isTeacher;
+    }
+
+    public void setTeacher(boolean teacher) {
+        isTeacher = teacher;
     }
 }

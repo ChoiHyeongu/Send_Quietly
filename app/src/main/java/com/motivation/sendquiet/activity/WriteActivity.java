@@ -18,12 +18,9 @@ public class WriteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_write);
 
         sendButton = findViewById(R.id.write_button_send);
-        sendButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(WriteActivity.this, DetailActivitiy.class);
-                startActivity(intent);
-            }
+        sendButton.setOnClickListener(v -> {
+            Intent intent = new Intent(WriteActivity.this, DetailActivitiy.class);
+            startActivity(intent);
         });
     }
 }

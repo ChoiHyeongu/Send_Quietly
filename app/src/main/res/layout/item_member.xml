@@ -4,8 +4,7 @@
     android:layout_height="wrap_content"
     android:onClick="onClickProfile"
     android:layout_marginVertical="10dp"
-    android:layout_marginHorizontal="40dp"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_marginHorizontal="40dp">
 
     <ImageView
         android:scaleType="centerCrop"
