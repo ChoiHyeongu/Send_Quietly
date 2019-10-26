@@ -1,10 +1,14 @@
 package com.motivation.sendquiet.model;
 
-public class User {
+import android.util.Log;
+
+import java.io.Serializable;
+
+public class User implements Serializable {
 
     String id;
     String name;
-    int send;
+    int from;
     int to;
     String group;
     boolean isTeacher = false;
@@ -13,10 +17,10 @@ public class User {
         // default constructor
     }
 
-    public User(String id, String name, int send, int to, String group, boolean isTeacher) {
+    public User(String id, String name, int from, int to, String group, boolean isTeacher) {
         this.id = id;
         this.name = name;
-        this.send = send;
+        this.from = from;
         this.to = to;
         this.group = group;
         this.isTeacher = isTeacher;
@@ -38,12 +42,12 @@ public class User {
         this.name = name;
     }
 
-    public int getSend() {
-        return send;
+    public int getfrom() {
+        return from;
     }
 
-    public void setSend(int send) {
-        this.send = send;
+    public void setfrom(int from) {
+        this.from = from;
     }
 
     public int getTo() {
@@ -68,5 +72,15 @@ public class User {
 
     public void setTeacher(boolean teacher) {
         isTeacher = teacher;
+    }
+
+    public void getUserInfo(String tag){
+        Log.d(tag,
+                    "ID : " + this.id
+                        + "\nName :" + this.name
+                        + "\nGroup : " + this.group
+                        + "\nTo : " + this.to
+                        + "\nfrom : " + this.from
+                        + "\nisTeacher : " + this.isTeacher);
     }
 }

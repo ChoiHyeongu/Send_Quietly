@@ -7,14 +7,18 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.motivation.sendquiet.R;
+import com.motivation.sendquiet.model.User;
 
 public class MainActivity extends AppCompatActivity {
+
+    final String TAG = "MainActivity";
 
     MemberFragment memberFragment;
     LetterListFragment letterListFragment;
@@ -53,5 +57,20 @@ public class MainActivity extends AppCompatActivity {
     public void onClickProfile(View view) {
         Intent intent = new Intent(MainActivity.this, WriteActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        Intent getIntent = getIntent();
+        User user =  (User)getIntent.getSerializableExtra("User");
+        user.getUserInfo(TAG);
+
+        Bundle userBundle = new Bundle(1);
+        userBundle.putSerializable("User", user);
+
+        memberFragment.setArguments(userBundle);
+        letterListFragment.setArguments(userBundle);
     }
 }
