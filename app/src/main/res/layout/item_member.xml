@@ -7,6 +7,7 @@
     android:layout_marginHorizontal="40dp">
 
     <ImageView
+        android:id="@+id/member_img_profile"
         android:scaleType="centerCrop"
         android:src="@drawable/profile1"
         android:layout_width="60dp"
@@ -18,7 +19,7 @@
         android:gravity="center"
         android:textColor="@android:color/black"
         android:text="최형우"
-        android:id="@+id/member_name"
+        android:id="@+id/member_text_username"
         android:layout_width="wrap_content"
         android:layout_height="match_parent" />
 

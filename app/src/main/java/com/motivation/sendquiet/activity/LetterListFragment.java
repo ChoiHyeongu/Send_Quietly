@@ -1,27 +1,37 @@
 package com.motivation.sendquiet.activity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.motivation.sendquiet.R;
+import com.motivation.sendquiet.model.User;
 
 public class LetterListFragment extends Fragment {
+
+    final String TAG = "LetterListFragment";
+
+    User user;
 
     public LetterListFragment() {
         // Required empty public constructor
     }
 
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Bundle bundle = getArguments();
+        if(bundle != null){
+            user = (User)bundle.getSerializable("User");
+            user.getUserInfo(TAG);
+        }
     }
 
     @Override

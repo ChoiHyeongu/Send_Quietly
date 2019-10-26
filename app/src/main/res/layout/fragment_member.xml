@@ -6,16 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".activity.MemberFragment">
 
-    <include layout="@layout/item_member"/>
-    <include layout="@layout/item_member"/>
-    <include layout="@layout/item_member"/>
-    <include layout="@layout/item_member"/>
-    <include layout="@layout/item_member"/>
-    <include layout="@layout/item_member"/>
-    <include layout="@layout/item_member"/>
-    <include layout="@layout/item_member"/>
-    <include layout="@layout/item_member"/>
-    <include layout="@layout/item_member"/>
-    <include layout="@layout/item_member"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/member_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

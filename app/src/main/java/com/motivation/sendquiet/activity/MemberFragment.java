@@ -9,8 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.motivation.sendquiet.R;
+import com.motivation.sendquiet.model.User;
 
 public class MemberFragment extends Fragment {
+
+    final String TAG = "MemberFragment";
+
+    User user;
 
     public MemberFragment() {
         // Required empty public constructor
@@ -20,6 +25,11 @@ public class MemberFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Bundle bundle = getArguments();
+        if(bundle != null){
+            user = (User)bundle.getSerializable("User");
+            user.getUserInfo(TAG);
+        }
     }
 
     @Override
@@ -28,4 +38,6 @@ public class MemberFragment extends Fragment {
 
         return view;
     }
+
+
 }
