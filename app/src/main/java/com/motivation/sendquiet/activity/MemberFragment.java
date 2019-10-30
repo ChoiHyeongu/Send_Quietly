@@ -57,20 +57,19 @@ public class MemberFragment extends Fragment {
         memberListView = view.findViewById(R.id.member_list);
 
         userReference = FirebaseDatabase.getInstance().getReference("User");
-        users = setUserList();
+        setUserList();
 
         for(int i = 0; i < users.size(); i++){
             Log.d("onCV", users.get(i).getName());
         }
 
         memberListView.setLayoutManager(new LinearLayoutManager(getContext()));
-
+        memberListAdapter = new MemberListAdapter(users);
+        memberListView.setAdapter(memberListAdapter);
         return view;
     }
 
-    private ArrayList<User> setUserList(){
-
-        ArrayList<User> list = new ArrayList<>();
+    private void setUserList(){
 
         userReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -78,8 +77,7 @@ public class MemberFragment extends Fragment {
                 users.clear();
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                     User user = snapshot.getValue(User.class);
-                    list.add(user);
-                    Log.d("onDataChange", user.getName());
+                    users.add(user);
                 }
             }
 
@@ -88,8 +86,5 @@ public class MemberFragment extends Fragment {
 
             }
         });
-
-        Log.d("setUserLIst", String.valueOf(list.size()));
-        return list;
     }
 }
