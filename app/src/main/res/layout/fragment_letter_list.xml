@@ -6,16 +6,14 @@
     android:orientation="vertical"
     tools:context=".activity.LetterListFragment">
 
-    <include
-        android:id="@+id/letter"
-        layout="@layout/item_letter"/>
-    <include layout="@layout/item_letter"/>
-    <include layout="@layout/item_letter"/>
-    <include layout="@layout/item_letter"/>
-    <include layout="@layout/item_letter"/>
-    <include layout="@layout/item_letter"/>
-    <include layout="@layout/item_letter"/>
-    <include layout="@layout/item_letter"/>
-    <include layout="@layout/item_letter"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/letter_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:itemCount="12"
+        android:visibility="visible"
+        tools:listitem="@layout/item_letter">
+
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

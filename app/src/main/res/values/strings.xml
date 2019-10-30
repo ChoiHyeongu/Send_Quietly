@@ -24,4 +24,7 @@
     <string name="menu_send">Send</string>
     <string name="title_home">Home</string>
     <string name="sign_in">Sign In</string>
+    <string name="content">Content</string>
+    <string name="title">Title</string>
+    <string name="send">Send</string>
 </resources>

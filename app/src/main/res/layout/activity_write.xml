@@ -9,20 +9,27 @@
     tools:context=".activity.WriteActivity">
 
     <EditText
+        android:hint="@string/title"
         android:layout_alignParentTop="true"
+        android:textSize="25sp"
         android:id="@+id/write_edit_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
+        android:id="@+id/write_edit_content"
         android:gravity="start"
+        android:hint="@string/content"
         android:layout_below="@id/write_edit_title"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <Button
-        android:text="Send"
+        android:text="@string/send"
+        android:onClick="sendLetter"
         android:id="@+id/write_button_send"
+        android:layout_margin="5dp"
+        android:background="@drawable/bg_btn_signin"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

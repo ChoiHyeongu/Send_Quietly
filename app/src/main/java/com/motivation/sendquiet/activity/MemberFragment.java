@@ -28,13 +28,11 @@ public class MemberFragment extends Fragment {
 
     RecyclerView memberListView;
 
-    private User user;
+    private User loginUser;
     private ArrayList<User> users = new ArrayList<>();
-    private MemberListAdapter memberListAdapter;
 
     //Firebase
     private DatabaseReference userReference;
-    private DatabaseReference reference;
 
     public MemberFragment() {
         // Required empty public constructor
@@ -43,12 +41,6 @@ public class MemberFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Bundle bundle = getArguments();
-        if(bundle != null){
-            user = (User)bundle.getSerializable("User");
-            user.getUserInfo(TAG);
-        }
     }
 
     @Override
@@ -56,21 +48,25 @@ public class MemberFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_member, container, false);
         memberListView = view.findViewById(R.id.member_list);
 
-        userReference = FirebaseDatabase.getInstance().getReference("User");
-        setUserList();
-
-        for(int i = 0; i < users.size(); i++){
-            Log.d("onCV", users.get(i).getName());
+        Bundle bundle = getArguments();
+        if(bundle != null){
+            loginUser = (User)bundle.getSerializable("User");
+            loginUser.getUserInfo("LoginUser");
+        } else {
+            Log.d("LoginUser", "Bundle is null");
         }
 
+        setUserList();
+
         memberListView.setLayoutManager(new LinearLayoutManager(getContext()));
-        memberListAdapter = new MemberListAdapter(users);
+        MemberListAdapter memberListAdapter = new MemberListAdapter(users, loginUser);
         memberListView.setAdapter(memberListAdapter);
         return view;
     }
 
     private void setUserList(){
 
+        userReference = FirebaseDatabase.getInstance().getReference("User");
         userReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
