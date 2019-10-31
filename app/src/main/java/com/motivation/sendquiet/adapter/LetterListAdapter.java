@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.motivation.sendquiet.R;
+import com.motivation.sendquiet.activity.DetailActivitiy;
 import com.motivation.sendquiet.activity.WriteActivity;
 import com.motivation.sendquiet.model.Letter;
 import com.motivation.sendquiet.model.User;
@@ -43,6 +44,11 @@ public class LetterListAdapter extends RecyclerView.Adapter<LetterListAdapter.Vi
         viewHolder.titleText.setText(letter.getTitle());
         viewHolder.contentText.setText(letter.getContent());
         viewHolder.titleText.setOnClickListener(v -> {
+            Intent intent = new Intent(context, DetailActivitiy.class);
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("Letter", letter);
+            intent.putExtras(bundle);
+            context.startActivity(intent);
         });
     }
 

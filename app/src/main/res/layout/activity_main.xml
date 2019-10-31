@@ -34,18 +34,30 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"/>
 
-            <Button
+            <ImageButton
                 android:layout_width="30dp"
-                android:layout_height="30dp" />
-            <Button
+                android:layout_height="30dp"
+                android:background="@drawable/ic_menu_camera"
+                android:backgroundTint="@android:color/black"
+                android:tint="@android:color/black" />
+
+            <ImageButton
                 android:layout_width="30dp"
-                android:layout_height="30dp" />
-            <Button
+                android:layout_height="30dp"
+                android:background="@drawable/ic_menu_share"
+                android:backgroundTint="@android:color/black" />
+
+            <ImageButton
                 android:layout_width="30dp"
-                android:layout_height="30dp" />
-            <Button
+                android:layout_height="30dp"
+                android:background="@drawable/ic_notifications_black_24dp"
+                android:backgroundTint="@android:color/black" />
+
+            <ImageButton
                 android:layout_width="30dp"
-                android:layout_height="30dp" />
+                android:layout_height="30dp"
+                android:background="@drawable/ic_menu_manage"
+                android:backgroundTint="@android:color/black" />
 
         </LinearLayout>
 
