@@ -26,7 +26,8 @@ public class WriteActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference sendReference;
     private DatabaseReference receiveReference;
-    private DatabaseReference reference;
+    private DatabaseReference toUserReference;
+    private DatabaseReference fromUserReference;
 
     //User
     User toUser;
@@ -49,6 +50,8 @@ public class WriteActivity extends AppCompatActivity {
 
         sendReference.child(letter.getTitle()).setValue(letter);
         receiveReference.child(letter.getTitle()).setValue(letter);
+        toUserReference.setValue(toUser.getTo() + 1);
+        fromUserReference.setValue(fromUser.getfrom() + 1);
 
         Toast.makeText(this, "정상적으로 전송되었습니다.", Toast.LENGTH_SHORT).show();
         finish();
@@ -77,6 +80,16 @@ public class WriteActivity extends AppCompatActivity {
                             getReference("Letter").
                             child(toUser.getId()).
                             child("Receive");
+
+        toUserReference = FirebaseDatabase.getInstance().
+                            getReference("User").
+                            child(toUser.getId()).
+                            child("to");
+
+        toUserReference = FirebaseDatabase.getInstance().
+                            getReference("User").
+                            child(fromUser.getId()).
+                            child("from");
     }
 
     private Letter createLetter(){
