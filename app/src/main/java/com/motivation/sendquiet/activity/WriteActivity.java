@@ -50,11 +50,16 @@ public class WriteActivity extends AppCompatActivity {
 
         sendReference.child(letter.getTitle()).setValue(letter);
         receiveReference.child(letter.getTitle()).setValue(letter);
-        toUserReference.setValue(toUser.getTo() + 1);
-        fromUserReference.setValue(fromUser.getfrom() + 1);
+
+        //countToFrom();
 
         Toast.makeText(this, "정상적으로 전송되었습니다.", Toast.LENGTH_SHORT).show();
         finish();
+    }
+
+    private void countToFrom(){
+        toUserReference.setValue(toUser.getTo() + 1);
+        fromUserReference.setValue(fromUser.getfrom() + 1);
     }
 
 
@@ -62,8 +67,6 @@ public class WriteActivity extends AppCompatActivity {
 
         Intent getIntent = getIntent();
         ArrayList<User> userInfo = (ArrayList<User>) getIntent.getSerializableExtra("UserInfo");
-
-        Log.d(TAG, String.valueOf(userInfo.size()));
 
         fromUser = userInfo.get(0);
         toUser = userInfo.get(1);

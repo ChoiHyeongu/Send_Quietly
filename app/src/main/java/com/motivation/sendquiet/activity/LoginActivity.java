@@ -77,6 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                     intent.putExtra("User", user);
                     user.getUserInfo(TAG);
                     startActivity(intent);
+                    finish();
                 } else {
                     Toast.makeText(getApplicationContext(), "회원 정보가 없습니다.", Toast.LENGTH_SHORT).show();
                 }

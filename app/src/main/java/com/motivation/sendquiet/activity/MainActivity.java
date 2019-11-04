@@ -45,24 +45,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        memberFragment = new MemberFragment();
-        letterListFragment = new LetterListFragment();
-
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-        getSupportFragmentManager().beginTransaction().add(R.id.main_container, memberFragment).commit();
-    }
-
-    public void onClickProfile(View view) {
-        Intent intent = new Intent(MainActivity.this, WriteActivity.class);
-        startActivity(intent);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
         Intent getIntent = getIntent();
         User user =  (User)getIntent.getSerializableExtra("User");
         user.getUserInfo(TAG);
@@ -70,7 +52,20 @@ public class MainActivity extends AppCompatActivity {
         Bundle userBundle = new Bundle(1);
         userBundle.putSerializable("User", user);
 
+        memberFragment = new MemberFragment();
+        letterListFragment = new LetterListFragment();
+
         memberFragment.setArguments(userBundle);
         letterListFragment.setArguments(userBundle);
+
+        BottomNavigationView navView = findViewById(R.id.nav_view);
+        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.main_container, memberFragment).commit();
+    }
+
+    public void onClickProfile(View view) {
+        Intent intent = new Intent(MainActivity.this, WriteActivity.class);
+        startActivity(intent);
     }
 }
